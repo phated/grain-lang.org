@@ -15,12 +15,12 @@ jobs:
 
       - name: Replace download links
         run: |
-          sed -E -i 's|(https://github\.com/grain-lang/grain/releases/download/)[^/]+(/)|\1${{ github.event.inputs.tag }}\2|g' src/getting_grain.md
+          sed -E -i 's|(https://github\.com/phated/grain/releases/download/)[^/]+(/)|\1${{ github.event.inputs.tag }}\2|g' src/getting_grain.md
 
       - name: Checkout Grain
         uses: actions/checkout@v2
         with:
-          repository: grain-lang/grain
+          repository: phated/grain
           ref: ${{ github.event.inputs.tag }}
           path: grain
 
